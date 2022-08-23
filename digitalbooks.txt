@@ -1,0 +1,56 @@
+Author:  
+Signup (POST): localhost:9090/api/v1/digitalbooks/author/signup
+Req: {"authorName":"author1","emailId":"author1@gmail.com","password":"author1@123"}
+
+Authenticate (POST) :localhost:9090/api/v1/digitalbooks/author/authenticate
+Req: {"username":"author1@gmail.com","password":"author1@123"}
+
+createBook (POST) : localhost:9090/api/v1/digitalbooks/author/createBook
+Req: {"title":"Ramayanam","price":750,"authorId":3,"blocked":false}
+
+listBooks (GET) :localhost:9090/api/v1/digitalbooks/author/listBooks/1
+
+listBlocked (GET) :localhost:9090/api/v1/digitalbooks/author/listBlocked/1
+
+block book (GET) :localhost:9090/api/v1/digitalbooks/author/blockBook/1/2
+
+unblock book (GET) : localhost:9090/api/v1/digitalbooks/author/unblockBook/2/3
+
+
+
+
+Reader: 
+
+signup (POST) : localhost:9090/api/v1/digitalbooks/reader/signup
+Req: {"readerName":"readerC","emailId":"readerC@gmail.com","password":"readerC@123"}
+
+subscribe(POST) : localhost:9090/api/v1/digitalbooks/reader/subscribe
+Req: {"readerId":1,"emailId":"readerA@gmail.com","bookId":4,"transactionId":35,"amount":650}
+
+
+subscribeList (GET) : localhost:9090/api/v1/digitalbooks/reader/subscribeList/1
+
+unsubscribe (GET) : localhost:9090/api/v1/digitalbooks/reader/unsubscribe/{transactionId}
+
+
+
+Book:
+
+createBook (POST) : localhost:9090/api/v1/digitalbooks/book/createBook
+Req: {"title":"Ramayanam","price":750,"blocked":false,"description":"The Ramayana is an ancient Sanskrit epic which follows Prince Rama's quest to rescue his beloved wife Sita from the clutches of Ravana with the help of an army of monkeys. It is traditionally attributed to the authorship of the sage Valmiki"}
+
+bookliat (GET) : localhost:9090/api/v1/digitalbooks/book/
+
+blockList (GET): localhost:9090/api/v1/digitalbooks/book/blockedList
+
+unblock (GET): localhost:9090/api/v1/digitalbooks/book/unblockList
+
+
+
+
+
+Kafka running
+
+
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+.\bin\windows\kafka-server-start.bat .\config\server.properties
